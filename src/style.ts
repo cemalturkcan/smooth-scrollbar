@@ -1,5 +1,5 @@
-const TRACK_BG = 'rgba(222, 222, 222, .75)';
-const THUMB_BG = 'rgba(0, 0, 0, .5)';
+const TRACK_BG = '#f2f2f2';
+const THUMB_BG = '#e6e6e6';
 
 // sets content's display type to `flow-root` to suppress margin collapsing
 const SCROLLBAR_STYLE = `

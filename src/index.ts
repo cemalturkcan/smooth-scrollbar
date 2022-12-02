@@ -39,14 +39,14 @@ export default class SmoothScrollbar extends Scrollbar {
    *
    * @param elem The DOM element that you want to initialize scrollbar to
    * @param [options] Initial options
+   * @param style Default styles
    */
-  static init(elem: HTMLElement, options?: Partial<I.ScrollbarOptions>): Scrollbar {
+  static init(elem: HTMLElement, style: string , options?: Partial<I.ScrollbarOptions>): Scrollbar {
     if (!elem || elem.nodeType !== 1) {
       throw new TypeError(`expect element to be DOM Element, but got ${elem}`);
     }
 
-    // attach stylesheet
-    attachStyle();
+    attachStyle(style);
 
     if (scrollbarMap.has(elem)) {
       return scrollbarMap.get(elem) as Scrollbar;
@@ -59,10 +59,11 @@ export default class SmoothScrollbar extends Scrollbar {
    * Automatically init scrollbar on all elements base on the selector `[data-scrollbar]`
    *
    * @param options Initial options
+   * @param style Default styles
    */
-  static initAll(options?: Partial<I.ScrollbarOptions>): Scrollbar[] {
+  static initAll(options?: Partial<I.ScrollbarOptions>, style: string = ''): Scrollbar[] {
     return Array.from(document.querySelectorAll('[data-scrollbar]'), (elem: HTMLElement) => {
-      return SmoothScrollbar.init(elem, options);
+      return SmoothScrollbar.init(elem, style, options);
     });
   }
 
@@ -126,8 +127,8 @@ export default class SmoothScrollbar extends Scrollbar {
    * You don't need to call this method manually unless
    * you removed the default styles via `Scrollbar.detachStyle()`
    */
-  static attachStyle() {
-    return attachStyle();
+  static attachStyle(style: string) {
+    return attachStyle(style);
   }
 
   /**

@@ -23,14 +23,14 @@ const overscrollOptions = {
 };
 
 const scrollbars = [
-  Scrollbar.init(document.getElementById('main-scrollbar') as HTMLElement, {
+  Scrollbar.init(document.getElementById('main-scrollbar') as HTMLElement, 'asd', {
     ...options,
     delegateTo: document,
     plugins: {
       overscroll: { ...overscrollOptions },
     },
   }),
-  Scrollbar.init(document.getElementById('inner-scrollbar') as HTMLElement, {
+  Scrollbar.init(document.getElementById('inner-scrollbar') as HTMLElement, 'asd',{
     ...options,
     plugins: {
       overscroll: { ...overscrollOptions },

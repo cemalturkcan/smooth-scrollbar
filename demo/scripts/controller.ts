@@ -67,6 +67,7 @@ f1.open();
   f1.add(options, 'renderByPixels'),
   f1.add(options, 'alwaysShowTracks'),
   f1.add(options, 'continuousScrolling'),
+  f1.add(options, 'color'),
 ].forEach((ctrl) => {
   ctrl.onChange(updateScrollbar);
 });

@@ -1,5 +1,5 @@
-const TRACK_BG = '#f2f2f2';
-const THUMB_BG = '#e6e6e6';
+const TRACK_BG = 'red';
+const THUMB_BG = 'red';
 
 // sets content's display type to `flow-root` to suppress margin collapsing
 const SCROLLBAR_STYLE = `
@@ -60,18 +60,6 @@ const STYLE_ID = 'smooth-scrollbar-style';
 let isStyleAttached = false;
 
 export function attachStyle() {
-  if (isStyleAttached || typeof window === 'undefined') {
-    return;
-  }
-
-  const styleEl = document.createElement('style');
-  styleEl.id = STYLE_ID;
-  styleEl.textContent = SCROLLBAR_STYLE;
-
-  if (document.head) {
-    document.head.appendChild(styleEl);
-  }
-
   isStyleAttached = true;
 }
 

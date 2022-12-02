@@ -21,7 +21,10 @@ export class Options {
    */
   @range(0, Infinity)
   thumbMinSize = 20;
-
+  /**
+   * color.
+   */
+  color = '#fff';
   /**
    * Render every frame in integer pixel values
    * set to `true` to improve scrolling performance.
